@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_samples_example/splashScreen/example1/splash_screen_page.dart';
+import 'package:flutter_samples_example/splashScreen/splashScreenExample/example1/splash_screen_page.dart';
 
 class SplashScreenApp1 extends StatelessWidget {
   const SplashScreenApp1({Key? key}) : super(key: key);

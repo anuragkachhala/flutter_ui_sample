@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_samples_example/splashScreen/example1/splash_screen_example_1.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_samples_example/splashScreen/landing_page.dart';
-
-import 'home_screen.dart';
-
-void main(){
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+int? isviewed;
+Future<void> main() async {
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+  ));
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  isviewed = prefs.getInt('onBoard');
+  await Hive.initFlutter();
+  await Hive.openBox('');
   runApp(const MyApp());
 }
 
